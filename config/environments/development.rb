@@ -55,6 +55,8 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   config.generators do |g|
+    g.helper = false
+    g.assets = false
     g.controller_specs = false
     g.view_specs = false
     g.helper_specs = false
