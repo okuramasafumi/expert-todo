@@ -69,6 +69,8 @@ group :development do
   gem 'rubocop'
 
   gem 'brakeman', require: false
+
+  gem 'spring-commands-rspec'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
