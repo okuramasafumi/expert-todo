@@ -1,7 +1,7 @@
 {
   "name": "yaft",
   "private": true,
-  "engines": { "node": "6.11.5" },
+  "engines": { "node": "8.9.1" },
   "dependencies": {
     "@rails/webpacker": "^3.0.2",
     "babel-preset-react": "^6.24.1",
