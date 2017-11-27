@@ -66,4 +66,13 @@ RSpec.describe 'Item system test', type: :system do
       expect(Item.count).to eq(0)
     end
   end
+
+  describe 'Closing an item' do
+    before { create(:item, user: user) }
+    it 'closes the item' do
+      visit items_path(as: user)
+      first(:link, 'Close').click
+      expect(Item.first).to be_closed
+    end
+  end
 end

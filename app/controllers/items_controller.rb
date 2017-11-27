@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :require_login
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_item, only: [:show, :edit, :update, :destroy, :close]
 
   # GET /items
   def index
@@ -45,6 +45,11 @@ class ItemsController < ApplicationController
   def destroy
     @item.destroy
     redirect_to items_url, notice: 'Item was successfully destroyed.'
+  end
+
+  def close
+    @item.closed!
+    redirect_to items_url, notice: 'Item was successfully closed.'
   end
 
   private
