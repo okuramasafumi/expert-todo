@@ -5,18 +5,20 @@
 <table>
   <thead>
     <tr>
-      <th colspan="3"></th>
+      <th colspan="4"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @items.each do |item| %>
       <tr>
+        <td><%= check_box_tag "item_#{item.id}_closed", '1', item.closed?, disabled: true %></td>
         <td><%= item.title %></td>
         <td><%= item.description %></td>
         <td><%= link_to 'Show', item %></td>
         <td><%= link_to 'Edit', edit_item_path(item) %></td>
         <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Close', close_item_path(item), method: :patch %></td>
       </tr>
     <% end %>
   </tbody>
