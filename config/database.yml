@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
   database: yaft_production
   username: yaft
   password: <%= ENV['YAFT_DATABASE_PASSWORD'] %>
