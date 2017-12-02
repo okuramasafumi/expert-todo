@@ -25,5 +25,5 @@
 class User < ApplicationRecord
   include Clearance::User
 
-  has_many :items, dependent: :destroy
+  has_many :tasks, dependent: :destroy
 end
