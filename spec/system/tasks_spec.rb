@@ -53,9 +53,8 @@ RSpec.describe 'task system test', type: :system do
         fill_in 'task[title]', with: title
         fill_in 'task[description]', with: description
         click_on '作成'
-        expect(page).to have_content('foo').
-          and have_content('Task was successfully updated').
-          and have_current_path(tasks_path)
+        expect(page).to have_content('foo').and have_content('Task was successfully updated')
+        expect(page).to have_current_path(tasks_path)
       end
     end
   end
