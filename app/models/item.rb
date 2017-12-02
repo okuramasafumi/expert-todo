@@ -31,5 +31,5 @@ class Item < ApplicationRecord
 
   validates :title, :status, presence: true
 
-  enum status: {open: 1, closed: 2, deleted: 3}
+  enum status: { open: 1, closed: 2, deleted: 3 }
 end

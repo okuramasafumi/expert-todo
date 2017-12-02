@@ -17,3 +17,9 @@ Bundler:
 
 Metrics/LineLength:
   Max: 120
+  Exclude:
+    - 'spec/**/*.rb'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*.rb'
