@@ -16,7 +16,7 @@
 #
 # ### Indexes
 #
-# * `index_users_on_email`:
+# * `index_users_on_email` (_unique_):
 #     * **`email`**
 # * `index_users_on_remember_token`:
 #     * **`remember_token`**
@@ -25,5 +25,7 @@
 class User < ApplicationRecord
   include Clearance::User
 
-  has_many :items, dependent: :destroy
+  validates :email, presence: true, uniqueness: true
+
+  has_many :tasks, dependent: :destroy
 end

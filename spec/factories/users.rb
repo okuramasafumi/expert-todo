@@ -16,7 +16,7 @@
 #
 # ### Indexes
 #
-# * `index_users_on_email`:
+# * `index_users_on_email` (_unique_):
 #     * **`email`**
 # * `index_users_on_remember_token`:
 #     * **`remember_token`**
