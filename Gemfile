@@ -52,7 +52,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'awesome_print'
 
-  gem 'bullet'
+  # gem 'bullet'
 end
 
 group :development do
