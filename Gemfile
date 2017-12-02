@@ -32,6 +32,8 @@ gem 'turbolinks', '~> 5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem "bootsnap", ">= 1.1.0", require: false
+
 gem 'clearance', '~> 1.0'
 
 group :development, :test do
