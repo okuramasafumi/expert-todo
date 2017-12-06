@@ -1,0 +1,24 @@
+<%= form_with(model: item, local: true) do |form| %>
+  <% if item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+      <ul>
+      <% item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.label :title, 'タイトル' %>
+  <%= form.text_field :title %>
+  <%= form.label :description, '説明' %>
+  <%= form.text_field :description %>
+  <%= form.label :due_date, '期限' %>
+  <%= form.date_select :due_date, use_month_numbers: true %>
+
+  <div class="actions">
+    <%= form.submit '作成' %>
+  </div>
+<% end %>

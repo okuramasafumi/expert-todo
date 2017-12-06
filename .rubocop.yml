@@ -1,0 +1,19 @@
+AllCops:
+  Exclude:
+    - 'bin/**/*'
+    - 'config/**/*'
+    - 'db/**/*'
+    - 'node_modules/**/*'
+    - 'lib/tasks/auto_annotate_models.rake'
+
+Rails:
+  Enabled: true
+
+Style:
+  Enabled: false
+
+Bundler:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 120
