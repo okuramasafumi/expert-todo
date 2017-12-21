@@ -31,3 +31,6 @@
 
 en:
   hello: "Hello world"
+  user_mailer:
+    registration_confirmation:
+      subject: 'Welcome to Yaft!'

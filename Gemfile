@@ -36,6 +36,8 @@ gem "bootsnap", ">= 1.1.0", require: false
 
 gem 'clearance', '~> 1.0'
 
+gem 'rails-i18n', '~> 5.0.0'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -52,7 +54,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'awesome_print'
 
-  # gem 'bullet'
+  gem 'bullet', '>= 5.7.0'
 end
 
 group :development do
