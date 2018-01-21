@@ -1,4 +1,15 @@
 <p id="notice"><%= notice %></p>
 
+<div class="field">
+  <%= @task.title %>
+</div>
+<div class="field">
+  <%= @task.description %>
+</div>
+<div class="field">
+  <%= image_tag(url_for @task.file) %>
+</div>
+
 <%= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'Back', tasks_path %>
+<%= link_to 'Back', tasks_path %> |
+<%= link_to 'Close', close_task_path(@task) %>

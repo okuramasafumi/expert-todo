@@ -61,7 +61,8 @@ class TasksController < ApplicationController
     params.require(:task).permit(
       :title,
       :description,
-      :due_date
+      :due_date,
+      :file
     )
   end
 end

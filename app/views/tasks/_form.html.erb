@@ -11,12 +11,22 @@
     </div>
   <% end %>
 
-  <%= form.label :title, 'タイトル' %>
-  <%= form.text_field :title %>
-  <%= form.label :description, '説明' %>
-  <%= form.text_field :description %>
-  <%= form.label :due_date, '期限' %>
-  <%= form.date_select :due_date, use_month_numbers: true %>
+  <div class="field">
+    <%= form.label :title, 'タイトル' %>
+    <%= form.text_field :title %>
+  </div>
+  <div class="field">
+    <%= form.label :description, '説明' %>
+    <%= form.text_field :description %>
+  </div>
+  <div class="field">
+    <%= form.label :due_date, '期限' %>
+    <%= form.date_select :due_date, use_month_numbers: true %>
+  </div>
+  <div class="field">
+    <%= form.label :file %>
+    <%= form.file_field :file %>
+  </div>
 
   <div class="actions">
     <%= form.submit '作成' %>
