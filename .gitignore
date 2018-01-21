@@ -28,3 +28,4 @@
 
 # ActiveStorage
 /storage
+gcs-keyfile.json
