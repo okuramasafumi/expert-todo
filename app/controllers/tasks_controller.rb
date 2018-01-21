@@ -25,6 +25,7 @@ class TasksController < ApplicationController
     @task = current_user.tasks.build(task_params)
 
     if @task.save
+      @task.files.attach(params[:task][:files])
       redirect_to tasks_url, notice: 'Task was successfully created.'
     else
       render :new
@@ -62,7 +63,6 @@ class TasksController < ApplicationController
       :title,
       :description,
       :due_date,
-      :file
     )
   end
 end

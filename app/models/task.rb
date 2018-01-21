@@ -33,5 +33,5 @@ class Task < ApplicationRecord
 
   enum status: { open: 1, closed: 2, deleted: 3 }
 
-  has_one_attached :file
+  has_many_attached :files
 end

@@ -24,8 +24,8 @@
     <%= form.date_select :due_date, use_month_numbers: true %>
   </div>
   <div class="field">
-    <%= form.label :file %>
-    <%= form.file_field :file %>
+    <%= form.label :files %>
+    <%= form.file_field :files, multiple: true %>
   </div>
 
   <div class="actions">
