@@ -25,7 +25,7 @@ class TasksController < ApplicationController
     @task = current_user.tasks.build(task_params)
 
     if @task.save
-      @task.files.attach(params[:task][:files])
+      @task.files.attach(params[:task][:files]) if params[:task][:files].present?
       redirect_to tasks_url, notice: 'Task was successfully created.'
     else
       render :new
