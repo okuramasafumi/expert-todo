@@ -25,6 +25,7 @@ class TasksController < ApplicationController
     @task = current_user.tasks.build(task_params)
 
     if @task.save
+      @task.files.attach(params[:task][:files]) if params[:task][:files].present?
       redirect_to tasks_url, notice: 'Task was successfully created.'
     else
       render :new
@@ -61,7 +62,7 @@ class TasksController < ApplicationController
     params.require(:task).permit(
       :title,
       :description,
-      :due_date
+      :due_date,
     )
   end
 end

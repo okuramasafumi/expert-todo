@@ -1,4 +1,21 @@
 <p id="notice"><%= notice %></p>
 
+<div class="field">
+  <%= @task.title %>
+</div>
+<div class="field">
+  <%= @task.description %>
+</div>
+<% @task.files.each do |file| %>
+  <div class="field">
+    <% if file.representable? %>
+      <%= image_tag(url_for file.representation(resize: '100x100')) %>
+    <% else %>
+      <%= file.filename %>
+    <% end %>
+  </div>
+<% end %>
+
 <%= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'Back', tasks_path %>
+<%= link_to 'Back', tasks_path %> |
+<%= link_to 'Close', close_task_path(@task) %>

@@ -32,4 +32,6 @@ class Task < ApplicationRecord
   validates :title, :status, presence: true
 
   enum status: { open: 1, closed: 2, deleted: 3 }
+
+  has_many_attached :files
 end

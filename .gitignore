@@ -22,3 +22,10 @@
 /node_modules
 
 /spec/examples.txt
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
+
+# ActiveStorage
+/storage
+gcs-keyfile.json
