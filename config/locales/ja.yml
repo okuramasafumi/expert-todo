@@ -1,0 +1,4 @@
+ja:
+  user_mailer:
+    registration_confirmation:
+      subject: 'Yaftへようこそ！'

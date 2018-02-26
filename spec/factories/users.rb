@@ -16,7 +16,7 @@
 #
 # ### Indexes
 #
-# * `index_users_on_email`:
+# * `index_users_on_email` (_unique_):
 #     * **`email`**
 # * `index_users_on_remember_token`:
 #     * **`remember_token`**
@@ -24,7 +24,7 @@
 
 FactoryBot.define do
   factory :user do
-    sequence(:email) {|i| "test#{i}@example.com"}
+    sequence(:email) { |i| "test#{i}@example.com" }
     password 'password'
   end
 end
