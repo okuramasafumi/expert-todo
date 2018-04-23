@@ -2,28 +2,31 @@
 
 <h1>Tasks</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @tasks.each do |task| %>
-      <tr <%= "class=closed" if task.closed? %>>
-        <td><%= check_box_tag "task_#{task.id}_closed", '1', task.closed?, disabled: true %></td>
-        <td><%= task.title %></td>
-        <td><%= task.description %></td>
-        <td><%= link_to 'Show', task %></td>
-        <td><%= link_to 'Edit', edit_task_path(task) %></td>
-        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to 'Close', close_task_path(task), method: :patch %></td>
+<%= form_tag :tasks_bulk, method: :put do %>
+  <table>
+    <thead>
+      <tr>
+        <th colspan="4"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @tasks.each do |task| %>
+        <tr <%= "class=closed" if task.closed? %>>
+          <td><%= check_box_tag 'task_ids[]', task.id, task.closed? %></td>
+          <td><%= task.title %></td>
+          <td><%= task.description %></td>
+          <td><%= link_to 'Show', task %></td>
+          <td><%= link_to 'Edit', edit_task_path(task) %></td>
+          <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Close', close_task_path(task), method: :patch %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Task', new_task_path %>
+  <br>
+
+  <%= link_to 'New Task', new_task_path %>
+  <%= submit_tag 'Update tasks'%>
+<% end %>
