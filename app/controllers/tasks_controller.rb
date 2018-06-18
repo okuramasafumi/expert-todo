@@ -48,7 +48,7 @@ class TasksController < ApplicationController
   end
 
   def close
-    @task.closed!
+    @task.close!
     redirect_to tasks_url, notice: 'Task was successfully closed.'
   end
 
